@@ -65,7 +65,11 @@ class ProductService {
 		return $this->product->search($queryFilter);
  }
 
+	public function checkProduct($name) {
+      return $this->product->checkProduct($name);
+	}
+
 	public function delete($id) {
-      return $this->product->delete($id);
+		return $this->product->delete($id);
 	}
 }

@@ -37,6 +37,12 @@ class ProductController extends Controller {
     public function store(Request $request)
     {
         $productRequest = $request->all();
+        if ($this->productservice->checkProduct($productRequest['name'])) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Product already exist'
+            ])->setStatusCode(400);
+        }   
         $product = $this->productservice->create($productRequest);
         if ($product) {
             return response()->json([

@@ -85,4 +85,13 @@ class ProductRepository  {
     {
       return $this->category->where('name',$category)->first();
     }
+
+    public function checkProduct($name)
+    {
+      $product = $this->product->where('name', $name)->first();
+      if ($product) {
+        return true;
+      }
+      return false; 
+    }
 }
