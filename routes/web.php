@@ -15,20 +15,9 @@ Route::prefix('api')->group(function () {
     Route::post('/login', 'PassportController@login');
     Route::post('/register', 'PassportController@register');
     Route::middleware('auth:api')->group(function () {
-        Route::get('/product', 'ProductController@index');
-        Route::get('/product/{id}', 'ProductController@show');
-        Route::put('/product/{id}', 'ProductController@update');
-        Route::delete('/product/{id}', 'ProductController@destroy');
-        Route::post('/product', 'ProductController@store');
-        Route::resource('/project', 'ProjectController');
-        Route::resource('/team', 'TeamController');
-        Route::post('/users-team', 'TeamController@createUserTeam');
+        Route::resource('/product', 'ProductController');
+        Route::get('/product-search', 'ProductController@search');
         Route::resource('/user', 'UserController');
-        Route::get('/users-available', 'UserController@availableToTeam');
-        Route::resource('/backlog', 'BacklogController');
-        Route::get('/main-backlog', 'BacklogController@getMainBacklog');
-        Route::get('/get-backlogs-sprint/{id}', 'BacklogController@getBacklogsSprint');
-        Route::resource('/sprint', 'SprintController');
         Route::resource('/category', 'CategoryController');
         Route::resource('/cart', 'CartController');
         Route::put('/purchase', 'CartController@purchase');

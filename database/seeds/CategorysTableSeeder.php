@@ -12,10 +12,15 @@ class CategoryTableSeeder extends Seeder
      */
     public function run()
     {
-        for ($i=0; $i < 2; $i++) { 
-	    	Category::create([
-	            'name' => str_random(4),
-	        ]);
-    	}
+        $categories = [
+            [ 'name' => 'shoes ' ],
+            [ 'name' => 'clothing' ],
+            [ 'name' => 'accessories' ],
+        ];
+        foreach ($categories as $categorie) {
+            Category::create([
+                'name' => $categorie['name'],
+            ]);
+        }
     }
 }

@@ -13,4 +13,12 @@ class Product extends Model {
         'categories_id', 
         'user_id',
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function category()
+    {
+        return $this->belongsTo('App\Category', 'categories_id', 'id');
+    }
 }

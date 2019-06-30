@@ -62,6 +62,23 @@ class ProductController extends Controller {
         }
     }
 
+        /**
+     * Get the specified resource by search.
+     *
+     * @param  string $term
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function search(Request $request) {
+        $product = $this->productservice->search($request);
+        if($product) {
+            return response()->json([
+                'success' => true,
+                'data' => $product
+            ]);
+        }
+    }
+
     /**
      * Update the specified resource in storage.
      *
