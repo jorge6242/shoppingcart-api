@@ -1,4 +1,4 @@
-# Backend Products Example
+# Backend Shopping Cart Example
 
 ## Tecnologies
 
@@ -8,10 +8,13 @@
 ## Installation
 
 -   `copy .env.local file informacion , after, create .env file in the main project and paste the information`
+-   `create database : shoppingcart`
+-   `update database credentials, lines 13 and 14.`
 -   `composer install`
 -   `php artisan migrate`
     `php artisan key:generate`
     `php artisan passport:install`
 -   `php artisan passport:client --personal`
+-   `put any name for passport credentials`
 -   `php artisan db:seed`
 -   `php artisan serve --port=18081`
